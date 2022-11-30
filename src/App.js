@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Registerform from "./MyComponents/Registerform";
+
+import { Routes, Route } from "react-router-dom";
+import Loginform from "./MyComponents/Loginform";
+import Dashboard from "./MyComponents/Dashboard";
+import MyTodos from "./MyComponents/MyTodos";
+import SearchData from "./MyComponents/SearchData";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<Loginform />} />
+
+        <Route path="/register" element={<Registerform />} />
+
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        <Route path="/mytodo" element={<MyTodos />} />
+
+        <Route path="/search" element={<SearchData />} />
+      </Routes>
+      ;
     </div>
   );
 }
