@@ -101,7 +101,7 @@ function MyTodos() {
     }
 
     if (confirmValue !== "delete") {
-      alert("Cancel Operation.");
+      alert("Operation Abolished.");
     }
   };
 
