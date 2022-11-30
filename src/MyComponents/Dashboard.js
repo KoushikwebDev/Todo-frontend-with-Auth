@@ -15,10 +15,10 @@ function Dashboard() {
   const [task, seTtask] = useState("");
   //   console.log(title, task);
   const onload = async () => {
-    if (email !== "string") {
+    let email = localStorage.getItem("todoEmail");
+    if (typeof email !== "string") {
       alert("Access Denied, Please Login or Create an Account.");
       navigate("/");
-      return;
     }
 
     // let Auth = await axios.get(`${REACT_APP_BACKEND_URL}/dashboard`);

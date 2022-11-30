@@ -7,19 +7,19 @@ import LoadingSpinner from "./LoadingSpinner";
 
 const { REACT_APP_BACKEND_URL } = process.env;
 
+let email = localStorage.getItem("todoEmail");
 function MyTodos() {
   const navigate = useNavigate();
-  let email = localStorage.getItem("todoEmail");
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(true);
   // console.log(todos);
 
   //   sending request to backend 😎
   const showTodo = async () => {
-    if (!email) {
+    let email = localStorage.getItem("todoEmail");
+    if (typeof email !== "string") {
       alert("Access Denied, Please Login or Create an Account.");
       navigate("/");
-      return;
     }
     // console.log( REACT_APP_BACKEND_URL);
     let { data } = await axios.get(`${REACT_APP_BACKEND_URL}/gettodo/${email}`);
