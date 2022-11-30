@@ -29,7 +29,7 @@ function Navbar() {
             <NavLink to="/dashboard">Todo-App</NavLink>
           </h1>
           <nav>
-            <ul className="flex justify-between gap-3 text-[12px] font-semibold sm:gap-4 sm:text-lg md:gap-8">
+            <ul className="flex justify-between gap-3 text-[15px] font-semibold sm:gap-4 sm:text-lg md:gap-8">
               <li className="hover:text-[#FF6666] md:text-xl">
                 <NavLink to="/dashboard">Home</NavLink>
               </li>
