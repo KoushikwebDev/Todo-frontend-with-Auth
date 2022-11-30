@@ -15,7 +15,7 @@ function Dashboard() {
   const [task, seTtask] = useState("");
   //   console.log(title, task);
   const onload = async () => {
-    if (!email) {
+    if (!JSON.stringify(email)) {
       alert("Access Denied, Please Login or Create an Account.");
       navigate("/");
       return;

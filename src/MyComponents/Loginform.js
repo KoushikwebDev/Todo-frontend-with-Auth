@@ -39,8 +39,9 @@ function Loginform() {
       await localStorage.setItem("todoEmail", email);
       setEmail("");
       setPassword("");
-
-      navigate("/dashboard");
+      if (localStorage.getItem("todoEmail")) {
+        navigate("/dashboard");
+      }
     }
     if (err) {
       alert("Email and Password Incorrect.");
