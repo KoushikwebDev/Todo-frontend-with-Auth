@@ -9,7 +9,7 @@ function Loginform() {
   const [password, setPassword] = useState("");
 
   const redirect = () => {
-    if (localStorage.getItem("todoEmail")) {
+    if (typeof localStorage.getItem("todoEmail") == "string") {
       navigate("/dashboard");
     }
     return;
