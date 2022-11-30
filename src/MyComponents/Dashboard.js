@@ -28,8 +28,10 @@ function Dashboard() {
   };
 
   useEffect(() => {
+    console.log("effect runnning");
     onload();
-  });
+    //eslint-disable-next-line
+  }, []);
   // Sending data to DB 😎😎
   const handlePromise = async (promise) => {
     let data, error;

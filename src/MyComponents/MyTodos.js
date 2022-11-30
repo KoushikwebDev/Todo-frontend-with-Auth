@@ -29,8 +29,11 @@ function MyTodos() {
   };
 
   useEffect(() => {
+    // console.log("effect runnning");
+
     showTodo();
-  });
+    //eslint-disable-next-line
+  }, []);
 
   //   edit todo
   const editTodo = async (index) => {

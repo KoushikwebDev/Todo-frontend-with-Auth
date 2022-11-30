@@ -16,8 +16,11 @@ function Loginform() {
   };
 
   useEffect(() => {
+    console.log("effect runnning");
+
     redirect();
-  });
+    //eslint-disable-next-line
+  }, []);
 
   const handlePromise = async (promise) => {
     let data, err;
