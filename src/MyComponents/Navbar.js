@@ -8,7 +8,7 @@ function Navbar() {
   let email = localStorage.getItem("todoEmail");
 
   const logout = () => {
-    localStorage.removeItem("todoEmail");
+    // localStorage.removeItem("todoEmail");
     navigate("/");
   };
 
