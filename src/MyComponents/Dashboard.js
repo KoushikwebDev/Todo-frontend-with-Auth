@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
 const { REACT_APP_BACKEND_URL } = process.env;
-let email = localStorage.getItem("todoEmail");
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -43,6 +42,8 @@ function Dashboard() {
   };
 
   const sendData = async () => {
+    let email = localStorage.getItem("todoEmail");
+
     if (!(title && task)) {
       alert("Enter Title and tasks.");
       return;
