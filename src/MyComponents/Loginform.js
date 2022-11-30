@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -7,6 +7,17 @@ function Loginform() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const redirect = () => {
+    if (localStorage.getItem("todoEmail")) {
+      navigate("/dashboard");
+    }
+    return;
+  };
+
+  useEffect(() => {
+    redirect();
+  });
 
   const handlePromise = async (promise) => {
     let data, err;
@@ -21,16 +32,11 @@ function Loginform() {
 
   const submitHandeler = async (e) => {
     e.preventDefault();
-
     if (!(email && password)) {
       // alert("Enter email and password.");
       return;
     }
-    let userData = {
-      email,
-      password,
-    };
-
+    let userData = { email, password };
     const [, err] = await handlePromise(
       axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, userData)
     );
