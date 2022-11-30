@@ -45,7 +45,7 @@ function Navbar() {
             <NavLink to="/search">Search</NavLink>
           </h2>
           <h2 className="text-[12px] font-bold md:text-xl sm:text-lg">
-            Hi {Name}
+            Hi {Name ? Name : "User"}
           </h2>
           <button
             onClick={logout}
