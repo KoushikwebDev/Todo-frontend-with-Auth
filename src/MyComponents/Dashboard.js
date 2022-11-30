@@ -15,7 +15,7 @@ function Dashboard() {
   const [task, seTtask] = useState("");
   //   console.log(title, task);
   const onload = async () => {
-    if (!JSON.stringify(email)) {
+    if (!email) {
       alert("Access Denied, Please Login or Create an Account.");
       navigate("/");
       return;
@@ -51,7 +51,6 @@ function Dashboard() {
       title,
       tasks: task,
     };
-
     const [, error] = await handlePromise(
       axios.post(`${REACT_APP_BACKEND_URL}/addtodo/${email}`, todo)
     );
@@ -67,7 +66,6 @@ function Dashboard() {
   const submitHandeler = (e) => {
     e.preventDefault();
     sendData();
-
     if (title && task) {
       setTitle("");
       seTtask("");
