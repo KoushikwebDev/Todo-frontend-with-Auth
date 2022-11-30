@@ -31,12 +31,12 @@ function Loginform() {
       password,
     };
 
-    const [data, err] = await handlePromise(
+    const [, err] = await handlePromise(
       axios.post(`${process.env.REACT_APP_BACKEND_URL}/login`, userData)
     );
     // console.log(data, err);
     if (!err) {
-      localStorage.setItem("todoEmail", email);
+      await localStorage.setItem("todoEmail", email);
       setEmail("");
       setPassword("");
 
@@ -54,16 +54,13 @@ function Loginform() {
           <div className="card bg-blue-400 shadow-lg  w-full h-full rounded-3xl absolute  transform -rotate-6"></div>
           <div className="card bg-red-400 shadow-lg  w-full h-full rounded-3xl absolute  transform rotate-6"></div>
           <div className="relative w-full rounded-3xl  px-6 py-4 bg-gray-100 shadow-md">
-            <h1
-              for=""
-              className="block text-lg mt-3  text-gray-700 text-center font-semibold"
-            >
+            <h1 className="block text-lg mt-3  text-gray-700 text-center font-semibold">
               Login
             </h1>
             <form
               method="post"
               onSubmit={submitHandeler}
-              enctype="multipart/form-data"
+              encType="multipart/form-data"
               className="mt-10"
             >
               <div>
@@ -90,7 +87,7 @@ function Loginform() {
 
               <div className="mt-7 flex">
                 <label
-                  for="remember_me"
+                  htmlFor="remember_me"
                   className="inline-flex items-center w-full cursor-pointer"
                 >
                   <input

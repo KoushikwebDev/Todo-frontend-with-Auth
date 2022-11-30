@@ -20,7 +20,7 @@ function Navbar() {
   };
   useEffect(() => {
     getData();
-  }, []);
+  });
   return (
     <>
       <header className="bg-[#CAD5E2] flex justify-between pl-8 pr-4  pt-6 pb-6  sm:pl-12 sm:gap-8  md:pl-16 md:pr-16">

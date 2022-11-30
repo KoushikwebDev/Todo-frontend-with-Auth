@@ -30,7 +30,7 @@ function MyTodos() {
 
   useEffect(() => {
     showTodo();
-  }, []);
+  });
 
   //   edit todo
   const editTodo = async (index) => {

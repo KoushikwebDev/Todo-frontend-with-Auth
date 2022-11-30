@@ -34,7 +34,7 @@ function SearchData() {
   };
   useEffect(() => {
     showTodo();
-  }, [filterData]);
+  });
 
   //   methods 😎😎
 

@@ -34,13 +34,13 @@ function Registerform() {
       password,
     };
 
-    const [data, err] = await handlePromise(
+    const [, err] = await handlePromise(
       axios.post(`${process.env.REACT_APP_BACKEND_URL}/register`, userData)
     );
-    console.log(data, err);
+    // console.log(data, err);
     if (!err) {
       alert("Account Created.");
-      localStorage.setItem("todoEmail", email);
+      await localStorage.setItem("todoEmail", email);
 
       setFirstName("");
       setLastName("");
@@ -61,7 +61,7 @@ function Registerform() {
           <form
             onSubmit={handleSubmit}
             method="post"
-            enctype="multipart/form-data"
+            encType="multipart/form-data"
           >
             <input
               type="text"
@@ -99,7 +99,7 @@ function Registerform() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               title="Please enter a strong password including all character."
-              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{4,}$"
             />
 
             <button
