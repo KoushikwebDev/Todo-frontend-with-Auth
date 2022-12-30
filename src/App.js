@@ -5,6 +5,11 @@ import Loginform from "./MyComponents/Loginform";
 import Dashboard from "./MyComponents/Dashboard";
 import MyTodos from "./MyComponents/MyTodos";
 import SearchData from "./MyComponents/SearchData";
+import AppwriteLogin from "./Appwrite/AppwriteLogin";
+import AppwriteSignUp from "./Appwrite/AppwriteSignUp";
+import AppwriteDashboard from "./Appwrite/AppwriteDashboard";
+import Alltodos from "./Appwrite/Alltodos";
+import Search from "./Appwrite/Search";
 
 function App() {
   return (
@@ -19,6 +24,16 @@ function App() {
         <Route path="/mytodo" element={<MyTodos />} />
 
         <Route path="/search" element={<SearchData />} />
+
+        <Route path="/appwritelogin" element={<AppwriteLogin />} />
+
+        <Route path="/appwritesignup" element={<AppwriteSignUp />} />
+
+        <Route path="/appwritedashboard" element={<AppwriteDashboard />} />
+
+        <Route path="/appwritetodos" element={<Alltodos />} />
+
+        <Route path="/appwritesearch" element={<Search />} />
       </Routes>
       ;
     </div>
